@@ -83,7 +83,7 @@ Create a `requirements.txt` file containing:
 
 Install dependencies with:
 
-  ```
+  ```bash
   pip install -r requirements.txt
   ```
 
@@ -93,20 +93,20 @@ Install dependencies with:
 
 1. Clone the repository:
 
-  ```
+  ```bash
   git clone <repo-link>
   cd image-captioning-blip
   ```
 
 2. Launch Jupyter Notebook:
 
-  ```
+  ```bash
   jupyter notebook
   ```
 
 3. Open the notebook:
 
-  ```
+  ```bash
   Image_Captioning_BLIP.ipynb
   ```
 
