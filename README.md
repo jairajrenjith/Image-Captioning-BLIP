@@ -53,8 +53,6 @@ Image-Captioning-BLIP/
 │   ├── transforms.py
 │   └── vocabulary.py
 │
-├── venv/
-│
 ├── Image_Captioning_BLIP.ipynb
 ├── model.pth
 ├── predict.py
