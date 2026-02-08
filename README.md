@@ -53,7 +53,9 @@ Image-Captioning-BLIP/
 │   ├── transforms.py
 │   └── vocabulary.py
 │
-├── Image_Captioning_BLIP.ipynb
+├── 01_hf_finetuning.ipynb
+├── 02_CNN_RNN_Image_Captioning.ipynb
+├── 03_ViT_RNN_Image_Captioning.ipynb
 ├── model.pth
 ├── predict.py
 ├── requirements.txt
