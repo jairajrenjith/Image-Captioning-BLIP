@@ -1,29 +1,36 @@
-# Image Captioning with BLIP Transformer
+# Image Captioning using Multiple Vision-Language Models
 
-A transformer-based image captioning project that uses a pretrained **BLIP (Bootstrapped Language Image Pretraining)** model to generate natural language descriptions from images. This project demonstrates how vision-language models can understand visual content and produce meaningful captions without expensive model training.
+An image captioning project that demonstrates three different approaches to generating natural language descriptions from images: a Hugging Face pretrained model (BLIP), a CNN–RNN encoder–decoder model, and a Vision Transformer (ViT) + RNN model. The project highlights how different vision-language architectures can be used for image captioning, including both pretrained and custom-trained models.
 
 ---
 
 ## Features
 
-- Uses a **state-of-the-art pretrained BLIP model**
-- Generates captions for **any input image**
-- Works on **CPU or GPU**
-- No model training required
-- Clean and simple notebook-based implementation
+- Hugging Face pretrained BLIP model fine-tuning
+- CNN–RNN image captioning model implementation
+- Vision Transformer (ViT) + RNN image captioning model
+- Uses the Conceptual Captions dataset
+- Demonstrates training and inference pipelines
+- Works on CPU or GPU
 
 ---
 
-## Model Used
+## Models Used
 
-**BLIP Image Captioning Base**  
-From Salesforce Research via Hugging Face Transformers.
+### 1. Hugging Face Pretrained Model (BLIP)
+- Vision Transformer (ViT) image encoder
+- Transformer-based language decoder
+- Fine-tuned on a subset of the Conceptual Captions dataset
 
-The model combines:
-- A **Vision Transformer (ViT)** image encoder  
-- A **Language Transformer** decoder  
+### 2. CNN–RNN Model
+- ResNet-based CNN image encoder
+- LSTM-based RNN decoder
+- Trained using image–caption pairs
 
-to generate descriptive captions.
+### 3. Vision Transformer (ViT) + RNN Model
+- Vision Transformer image encoder
+- GRU-based RNN decoder
+- Demonstrates transformer-based visual encoding with sequential caption generation
 
 ---
 
@@ -104,10 +111,12 @@ Install dependencies with:
   jupyter notebook
   ```
 
-3. Open the notebook:
+3. Run the Notebooks:
 
   ```bash
-  Image_Captioning_BLIP.ipynb
+  01_hf_finetuning.ipynb (Hugging Face BLIP fine-tuning)
+  02_CNN_RNN_Image_Captioning.ipynb (CNN–RNN model)
+  03_ViT_RNN_Image_Captioning.ipynb (ViT–RNN model)
   ```
 
 4. Run all cells step by step.
@@ -126,42 +135,47 @@ Then run the caption generation cell.
 
 ---
 
-## Example Output
+## Example Outputs
 
-Input image → Dog running in a field  
+- **BLIP (Fine-Tuned):** Generates fluent natural language captions for images.
+- **CNN–RNN:** Produces token-level outputs demonstrating the encoder–decoder pipeline.
+- **ViT–RNN:** Produces token-level outputs demonstrating transformer-based visual encoding with RNN decoding.
 
-Model Output:
-```
-a dog running through a grassy field
-```
+> Note: CNN–RNN and ViT–RNN models demonstrate the training and inference pipeline using minimal training and simplified vocabularies, hence outputs are shown at token level rather than fluent sentences.
 
 ---
 
 ## Multiple Caption Generation
 
-The notebook also supports generating multiple captions using beam search for more descriptive variations.
+The Hugging Face BLIP notebook supports generating multiple captions using beam search for more descriptive variations.
 
 ---
 
 ## Why Use Pretrained Models?
 
 Training image captioning models from scratch requires:
-- Large datasets
+- Large-scale datasets
 - Powerful GPUs
-- Long training time
+- Significant training time
 
-Using pretrained BLIP allows:
-- Faster results
-- High-quality captions
-- Practical deployment
+In this project, pretrained models are used where appropriate to demonstrate practical and efficient image captioning. The Hugging Face BLIP model leverages large-scale pretraining to produce fluent captions with minimal fine-tuning, while the CNN–RNN and ViT–RNN models are implemented to demonstrate custom encoder–decoder architectures and training pipelines.
 
 
 ---
 
 ## References
 
-- BLIP Paper: https://arxiv.org/abs/2201.12086  
-- Hugging Face Model: https://huggingface.co/Salesforce/blip-image-captioning-base  
+- BLIP: Bootstrapped Language-Image Pretraining  
+  https://arxiv.org/abs/2201.12086  
+
+- Hugging Face BLIP Model  
+  https://huggingface.co/Salesforce/blip-image-captioning-base  
+
+- Show and Tell: A Neural Image Caption Generator  
+  https://arxiv.org/abs/1411.4555  
+
+- An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale  
+  https://arxiv.org/abs/2010.11929
 
 ---
 
