@@ -37,7 +37,7 @@ An image captioning project that demonstrates three different approaches to gene
 ## Project Structure
 
 ```
-Image-Captioning-BLIP/
+Image-Captioning-Vision-Language-Models/
 │
 ├── data/
 │   ├── captions.json
